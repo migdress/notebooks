@@ -1,0 +1,89 @@
+GitNotebook
+
+Get the git version
+	git --version
+
+Change git configuration
+	git config --global user.name <username>
+	git config --global user.email <email>
+	git config --global color.ui <mode>
+
+Set an alias for a command
+	git config --global alias.<alias> <command>
+
+Set a default editor
+	git config --global core.editor <pathToEditor>
+
+Initialize a local git repository
+	git init
+
+Shows the status of the git working tree
+	git status
+
+Add files to the index
+	git add <file(s)>
+
+Discard non staged changes
+	git checkout <file(s)>
+
+Make a commit 
+	git commit -m <message>
+
+View the repository history log
+	git log
+
+view the repository history in a GUI
+	gitk
+
+Add a remote repository with an alias
+	git remote add <repositoryAlias> <url>
+
+Push to a remote repository
+	git push <repository|repositoryAlias> <branch>
+
+Clone a remote repository
+	git clone <repository> <directory>
+
+Pull from a remote repository
+	git pull <repository> <branch>
+
+Create a branch
+	git branch <name>
+
+Check the branch
+	git branch
+
+Change branch
+	git checkout <branch>
+
+Create a new branch and changing to it
+	git checkout -b <newBranch>
+
+Merge from another branch
+	git merge <branch>
+
+Delete a branch
+	git branch -d <branch>
+
+Undo the previous Merge
+	git reset --hard HEAD~
+
+Add a lightway tag 
+	git tag <tagname>
+
+Show a list of tags within the repository
+	git tag
+
+Show history log with tag information
+	git log --decorate
+
+Add an annotated tag
+	git tag -a <tagname>
+
+Add ad annotated tag with a note
+	git tag -am <message>
+
+Show the tags with their notes 
+	git tag -n
+
+Git tag -d <tagname>
