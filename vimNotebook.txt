@@ -1,0 +1,213 @@
+VIM Notebook
+
+
+learning tracker:
+	last lesson finished
+		usr_03.txt Moving Around
+	next lesson
+		usr_04.txt Making small changes
+
+Basic movement:
+	h, moves to the left
+	j, moves to upside
+	k, moves to downside
+	l, moves to the right
+
+Advanced movement:
+	NOTE: the following movement keys allow to specify a motion as a number
+	such that the motion+movementKey executes the instruction the amount specified
+	in motion 
+		example: 5e, moves the cursor 5 words till the end of the 5th word next to the cursor
+
+	w, moves the cursor to the first character of the next word
+		W, moves the cursor to the first character of the next word skipping anything that is not a word 
+	e, moves the cursor to the last character of the next word
+		E, moves the cursor to the last character of the next word skipping anything that is not a word
+	b, moves the cursor to the first character of the previous word
+		B, moves  the cursor to the first character of the previous word skipping anything that is not a word
+	ge, moves the cursor to the last character of the previous word
+	$, moves the cursor to the last character of the line
+	gg, moves the cursor to the first character of the first line
+	G, moves the cursor to the first character of the last line
+	<n>G, moves the cursor to the given line n
+	<n>%, moves the cursor to the n% of the document
+	H, moves to the top line of the current view (Home)
+	M, moves to the mid line of the current view (Middle)
+	L, moves to the bottom line of the current view (Last)
+	CTRL-U, scrolls up half screen
+	CTRL-D, scrolls down half screen
+	CTRL-Y, scrolls up one line at a time
+	CTRL-E, scrolls down one line at a time
+	CTRL-B, scroll up a whole screen
+	CTRL-F, scrolls down a whole screen
+	zz, places the screen with the cursor in the middle
+	zt, places the screen with the cursor at the top
+	zb, places the screen with the cursor at the bottom
+
+How to select text
+	v, starts selecting mode under the cursor so it's possible to move through the document selecting text
+	V, starts selecting the current line and then it's possible to move throught the document lines selecting them
+
+How to write a portion of text to a file
+	after selecting text with v, type
+	:w <filename>, saves the selected text into filename
+
+How to read and insert the content of an external file
+	:r <filename> reads the given filename and inserts the text under the cursor	
+	NOTE: It's possible to read the output of an external command
+		:r !<command>, reads and inserts the output of the given command under the cursor
+
+How to view the file status
+	CTRL+G, shows the file status including location, change
+
+How to change between Modes (NORMAL, INSERT, REPLACE):
+	ESC, go to NORMAL mode
+	i, go to INSERT mode under the cursor
+	a, go to INSERT mode after the cursor
+	A, go to INSERT mode at the end of the line
+	o, inserts an empty line below the cursor and places the cursor there in INSERT mode
+	O, inserts an empty line above the cursor and places the cursor there in INSERT mode
+	R, go to REPLACE mode under the cursor
+
+How to exit vim 
+	:q!, forces vim to exit without saving changes
+	:qa!, forces vim to close all the opened windows and exit without saving changes
+	:wq, exits vim saving changes
+	:w <filename>, saves the current file under the filename given
+	ZZ, write the changes and exits vim
+
+How to delete text:
+	x, deletes the character under the cursor 
+		<n>X, deletes n characters from and after the cursor
+	dw, deletes the word next to the cursor placing it at the start of the next word
+		d<n>w, deletes n words from and after the cursor placing it at the first character of the word next to the last deleted
+	de, deletes the word next to the cursor placing it before the next word 
+		d<n>e, deletes n words from and after the cursor placing it before the word next the last deleted
+	d$, deletes the content from the cursor to the end of the line
+		d<n>$, deletes n lines from and after the cursor
+	dd, deletes the whole line
+		<n>dd, deletes n whole lines from and below the cursor	
+	p, puts the text deleted after the cursor 
+
+How to undo and redo actions
+	u, undo the last action
+	U, undo all the changes on the whole line
+	CTRL+r, redo the undo action
+
+How to search, replace or change text
+	How to search text
+		/<text>, searchs for the given text forward
+		?<text>, searchs for the given text backward
+			n, after looking for text with '/' or '?', goes to the next coincidence
+			N, after looging for text with '/' or '?', goes to the previous coincidence
+			CTRL+o, go back to the position where the search started (jump to older position)
+			CTRL+t, go back one step after jumping (pop tag)
+			CTRL+i, go further to the positions where the search matched coincidences
+			:jumps, shows a list of jumps done and the respective lines
+		NOTE: to search for a specific word in the document, place the cursor over the word and press
+			*, to search for that word forward
+			#, to search for that word backward
+		How to search for a specific word conditioning the beginning and/or the end
+			/\<WORD\>, search for coincidences of WORD but not KENWORD or WORDPRESS			
+	How to search single characters
+		f<c>, searchs for the single character given c after the cursor in the current line
+		t<c>, does the same as f<c> but placing the cursor one character before the searched one
+		F<c>, searchs for the single character given c before the cursor in the current line
+		T<c>, does the same as F<c> but placing the cursor one character before (technically after) the cursor
+			;, after using f or t commands it moves to the next coincidence of single character in the line
+			,, after using f or t commands it moves moves to the previous coincidence of the single character in the line
+	How to search the matching closing/opening parenthesis, bracket or square brackets (PBoSb)
+		%, when pressed while the cursor is over a PBoSb looks for the respective opening or closed PBoSb 
+	How to replace text in the document
+		:s/old/new, changes the first occurrence of 'old' for 'new'	
+		:s/old/new/g, changes all the occurences of 'old' for 'new' in a line
+		:#,#s/old/new/g, changes all the ocurrences of 'old' for 'new' between the given lines #,#
+		:%s/old/new/g, changes all the occurrences of 'old' for 'new' in the whole document
+		:%s/old/new/gc, changes all the occurrences of 'old' for 'new' in the whole document with a confirmation
+		for each one
+		How to escape a slash or another character that needs to be escaped, special characters are .*[]^%/\?~$
+			prefix the character with a '\' for example to find the string 'etc/apt/file.txt'
+				/'etc\/apt\/file.txt'
+	r<x>, replaces the character under the cursor for the given x character
+	R, changes to REPLACE mode
+	ce, deletes the text from the cursor until the end of the word and changes to insert mode
+	cw, deletes the text from the cursor until to the first character of the next word without including it and changes to insert mode
+	c$, deletes the text from the cursor until the end of the line anc changes to insert mode
+	c<n>, deletes n characters from and after the cursor and changes to insert mode
+
+How to execute external commands
+	:!<command> <args>, executes the given command with the possible needed args
+	NOTE: when executing external commands that require files as arguments, it's possible
+	to press CTRL+D to show all available files that can be arguments. Also as usual in linux terminal,
+	TAB can be used to autocomplete the possible arguments
+
+How to copy and paste text
+	y, copies (yanks) the current character or the selected text
+	yy, yanks the whole line
+	ye, yanks till the end of the current or next word
+	yw, yanks till before the beginning of the next word
+	p, pastes the yanked text with 'y' or the deleted text with 'd'
+	"+y, copies the selected text to system clipboard (not in Vi)
+	"+p, pastes the text from system clipboard to the file (not in Vi)
+
+How to place makers on the file and jump between them
+	m<x>, places a mark in the given line x which can be a character [a-z]
+	'<x>, jumps to the mark x
+	'', jumps to the last position before a jump
+
+How to do other useful things
+	gu<motion><operator>, change to lower case
+	gU<motion><operator>, change to upper case
+	J, removes the end of the line merging thenext line with the current one
+	:e!, reloads the original version of the file discarding changes
+
+The SET option
+	NOTE: to unset any option, prepend the option with 'no'
+		example, to unset hlsearch 
+			:set nohlsearch
+	NOTE: to check if an option is set
+		:set <option>?
+	NOTE to view which startup scripts are being loaded 
+		:scriptnames
+	:set ic, ignores case in searchs and replacements
+		NOTE: to ignore case in just one search command execute the search as follows
+			/<text to search without case>\c
+	:set ignorecase, does the same as :set ic
+	:set hlsearch, highlight all the coincidences when searching for 
+		:set hls, does the same
+		:nohlsearch, removes the highlighting without disabling the option
+	:set incsearch, highlight the search coincidence when typing the search
+	:set nowrap, stop wrapping text
+	:set mouse=a, enables the mouse (in xterm or GUI)
+	:set nocp, set vim in nocompatible mode
+	:set number, displays the line number of each line
+	:set ruler, displays the cursor position on the bottom right corner of the screen
+
+The WINDOW system
+	CTRL+W CTRL+W, changes between one window to another
+
+How to get help and use the help pages
+	:help, opens the help window
+	CTRL+], jump to the section where the tag points to
+		CTRL+T, jump back to where we came from (repeat to go further back)
+		CTRL+O, jump back to where we came from (repeat to go further back)
+
+The .vimrc file
+	Location:
+		~/.vimrc, for Unix
+		$VIM/_vimrc, for MS-Windows
+	Location of the example .vimrc file
+		$VIMRUNTIME/vimrc_example.vim
+
+Check help later for
+	:help user-manual
+	:help vimrc-intro
+	:help ruler
+
+Troubleshooting
+	trouble:
+		copying to clipboard does not work in ubuntu
+	solution:
+		Reinstall vim as vim-gtk, typing the following text
+			sudo apt-get install vim-gtk
+
