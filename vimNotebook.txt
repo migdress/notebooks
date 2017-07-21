@@ -78,13 +78,16 @@ How to exit vim
 
 How to delete text:
 	x, deletes the character under the cursor 
-		<n>X, deletes n characters from and after the cursor
+		<n>x, deletes n characters from and after the cursor
+	X, deletes the character left to the cursor
+		<n>X, deletes n characters previous to the cursor
 	dw, deletes the word next to the cursor placing it at the start of the next word
 		d<n>w, deletes n words from and after the cursor placing it at the first character of the word next to the last deleted
 	de, deletes the word next to the cursor placing it before the next word 
 		d<n>e, deletes n words from and after the cursor placing it before the word next the last deleted
 	d$, deletes the content from the cursor to the end of the line
 		d<n>$, deletes n lines from and after the cursor
+	D, does the same as d$
 	dd, deletes the whole line
 		<n>dd, deletes n whole lines from and below the cursor	
 	p, puts the text deleted after the cursor 
@@ -133,7 +136,11 @@ How to search, replace or change text
 	ce, deletes the text from the cursor until the end of the word and changes to insert mode
 	cw, deletes the text from the cursor until to the first character of the next word without including it and changes to insert mode
 	c$, deletes the text from the cursor until the end of the line anc changes to insert mode
+	C, does the same as c$
+	cc, deletes the whole line and changes to insert mode
+	S, does the same as cc
 	c<n>, deletes n characters from and after the cursor and changes to insert mode
+	., repeats the last change
 
 How to execute external commands
 	:!<command> <args>, executes the given command with the possible needed args
