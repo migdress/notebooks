@@ -47,6 +47,8 @@ Advanced movement:
 How to select text
 	v, starts selecting mode under the cursor so it's possible to move through the document selecting text
 	V, starts selecting the current line and then it's possible to move throught the document lines selecting them
+	CTRL-v, starts selecting in a rectangular way
+	NOTE: After having selected some text, it's possible to press 'o' to change the end of the selection
 
 How to write a portion of text to a file
 	after selecting text with v, type
@@ -58,7 +60,7 @@ How to read and insert the content of an external file
 		:r !<command>, reads and inserts the output of the given command under the cursor
 
 How to view the file status
-	CTRL+G, shows the file status including location, change
+	CTRL-g, shows the file status including location, change
 
 How to change between Modes (NORMAL, INSERT, REPLACE):
 	ESC, go to NORMAL mode
@@ -95,7 +97,7 @@ How to delete text:
 How to undo and redo actions
 	u, undo the last action
 	U, undo all the changes on the whole line
-	CTRL+r, redo the undo action
+	CTRL-r, redo the undo action
 
 How to search, replace or change text
 	How to search text
@@ -103,9 +105,9 @@ How to search, replace or change text
 		?<text>, searchs for the given text backward
 			n, after looking for text with '/' or '?', goes to the next coincidence
 			N, after looging for text with '/' or '?', goes to the previous coincidence
-			CTRL+o, go back to the position where the search started (jump to older position)
-			CTRL+t, go back one step after jumping (pop tag)
-			CTRL+i, go further to the positions where the search matched coincidences
+			CTRL-o, go back to the position where the search started (jump to older position)
+			CTRL-t, go back one step after jumping (pop tag)
+			CTRL-i, go further to the positions where the search matched coincidences
 			:jumps, shows a list of jumps done and the respective lines
 		NOTE: to search for a specific word in the document, place the cursor over the word and press
 			*, to search for that word forward
@@ -140,12 +142,12 @@ How to search, replace or change text
 	cc, deletes the whole line and changes to insert mode
 	S, does the same as cc
 	c<n>, deletes n characters from and after the cursor and changes to insert mode
-	., repeats the last change
+	., repeats the last change command
 
 How to execute external commands
 	:!<command> <args>, executes the given command with the possible needed args
 	NOTE: when executing external commands that require files as arguments, it's possible
-	to press CTRL+D to show all available files that can be arguments. Also as usual in linux terminal,
+	to press CTRL-D to show all available files that can be arguments. Also as usual in linux terminal,
 	TAB can be used to autocomplete the possible arguments
 
 How to copy and paste text
@@ -191,13 +193,13 @@ The SET option
 	:set ruler, displays the cursor position on the bottom right corner of the screen
 
 The WINDOW system
-	CTRL+W CTRL+W, changes between one window to another
+	CTRL-W CTRL-W, changes between one window to another
 
 How to get help and use the help pages
 	:help, opens the help window
-	CTRL+], jump to the section where the tag points to
-		CTRL+T, jump back to where we came from (repeat to go further back)
-		CTRL+O, jump back to where we came from (repeat to go further back)
+	CTRL-], jump to the section where the tag points to
+		CTRL-T, jump back to where we came from (repeat to go further back)
+		CTRL-O, jump back to where we came from (repeat to go further back)
 
 The .vimrc file
 	Location:
