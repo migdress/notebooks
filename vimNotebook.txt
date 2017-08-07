@@ -170,6 +170,9 @@ How to do other useful things
 	J, removes the end of the line merging thenext line with the current one
 	:e!, reloads the original version of the file discarding changes
 
+How to align existing text to the current textwidth
+	gq		
+
 The SET option
 	NOTE: to unset any option, prepend the option with 'no'
 		example, to unset hlsearch 
