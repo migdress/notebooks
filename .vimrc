@@ -127,5 +127,7 @@ nnoremap <S-Tab> <<
 " for insert mode
 inoremap <S-Tab> <C-d>
 
+" These 2 lines allow to write notes with the bullet '*' and vim recognizing it
+" to wrap the lines without creating a new bullet with each new line
 set comments-=mb:*
 set comments+=fb:*
