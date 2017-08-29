@@ -106,7 +106,7 @@ endif
 "
 " The matchit plugin makes the % command work better, but it is not backwards
 " compatible.
-packadd matchit
+" packadd matchit
 
 set ai si
 filetype plugin indent on
@@ -119,7 +119,13 @@ set vb t_vb= " This is to avoid the beep when a keyboard is pressed wrong
 set fileencodings=utf-8
 set encoding=utf-8
 
+"Set tw=80 if autocmd is not compiled
+set tw=80
+
 " for command mode
 nnoremap <S-Tab> <<
 " for insert mode
 inoremap <S-Tab> <C-d>
+
+set comments-=mb:*
+set comments+=fb:*
