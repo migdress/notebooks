@@ -87,3 +87,9 @@ Show the tags with their notes
 	git tag -n
 
 Git tag -d <tagname>
+
+Revert to a specific commit
+    git reset --hard <commit id>
+
+Revert to a specific commit in another branch
+    git checkout -b <new branch name> <commit id>
