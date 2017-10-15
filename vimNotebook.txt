@@ -223,3 +223,9 @@ Troubleshooting
 		Reinstall vim as vim-gtk, typing the following text
 			sudo apt-get install vim-gtk
 
+How to get rid of '^M' character commands
+	:%s/<a1>//g
+		a1 - action1, is as follows
+			Hold down the CONTROL key ('Ctrl' in weyboards) and press the
+			following sequence 'CTRL M' in such way that in the command
+			line will apear the text ':%s/^M//g'
