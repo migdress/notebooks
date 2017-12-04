@@ -133,6 +133,15 @@ How to search, replace or change text
 		How to escape a slash or another character that needs to be escaped, special characters are .*[]^%/\?~$
 			prefix the character with a '\' for example to find the string 'etc/apt/file.txt'
 				/'etc\/apt\/file.txt'
+		How to use an existing part of a text in a replacement command
+			in the text
+				"field1"
+			it is possible to use
+				:s/\(^.+$\)/\1 is null OR \1 = ''/g
+			and the output will be
+				"field1 is null or field1 = ''"
+			This is possible because of \( and \) to group text parts, then it
+			can be used as \1 for the first group, \2 for the second and thus
 	r<x>, replaces the character under the cursor for the given x character
 	R, changes to REPLACE mode
 	ce, deletes the text from the cursor until the end of the word and changes to insert mode
