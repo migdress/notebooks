@@ -236,5 +236,8 @@ How to get rid of '^M' character commands
 	:%s/<a1>//g
 		a1 - action1, is as follows
 			Hold down the CONTROL key ('Ctrl' in weyboards) and press the
-			following sequence 'CTRL M' in such way that in the command
+			following sequence 'CTRL V CTRL M' in such way that in the command
 			line will apear the text ':%s/^M//g'
+
+How to turn off auto indend when pasting code into vim
+	:set paste
