@@ -43,6 +43,8 @@ Advanced movement:
 	zz, places the screen with the cursor in the middle
 	zt, places the screen with the cursor at the top
 	zb, places the screen with the cursor at the bottom
+	_, moves to the first non blank character of a line
+	g_, moves to last non blank character of a line
 
 How to select text
 	v, starts selecting mode under the cursor so it's possible to move through the document selecting text
