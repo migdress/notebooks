@@ -40,6 +40,10 @@ Advanced movement:
 	CTRL-E, scrolls down one line at a time
 	CTRL-B, scroll up a whole screen
 	CTRL-F, scrolls down a whole screen
+    zl, moves the screen to the left
+    <n>zl, moves the screen to the left n times
+    zh, moves the screen to the right
+    <n>zh, moves the screen to the right n times
 	zz, places the screen with the cursor in the middle
 	zt, places the screen with the cursor at the top
 	zb, places the screen with the cursor at the bottom
