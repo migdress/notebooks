@@ -116,7 +116,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 "set noexpandtab
-"set expandtab
+set expandtab
 set dir=c:\\tmp
 set vb t_vb= " This is to avoid the beep when a keyboard is pressed wrong
 set fileencodings=utf-8
